@@ -1,6 +1,6 @@
-$global:SpotifyBasicBearer             = $env:SpotifyBasicBearer
-$global:SpotifyRefreshToken            = $env:SpotifyRefreshToken
-$global:SpotifyAccessToken             = $env:SpotifyAccessToken
+$global:SpotifyBasicBearer             = [System.Environment]::GetEnvironmentVariable("SpotifyBasicBearer", "User")
+$global:SpotifyRefreshToken            = [System.Environment]::GetEnvironmentVariable("SpotifyRefreshToken", "User")
+$global:SpotifyAccessToken             = [System.Environment]::GetEnvironmentVariable("SpotifyAccessToken", "User")
 $global:SpotifyAccessTokenDateExpires  = (Get-Date)
 
 . $PSScriptRoot\Private\Get-SpotifyAccessToken.ps1
